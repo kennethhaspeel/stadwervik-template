@@ -1,4 +1,4 @@
-import { type Configuration, LogLevel } from "@azure/msal-browser";
+import { type Configuration, LogLevel, PublicClientApplication } from "@azure/msal-browser";
 
 export const msalConfig: Configuration = {
   auth: {
@@ -42,3 +42,4 @@ export const loginRequest = {
 export const apiRequest = {
   scopes: ["api://xxxxxxxxxxxxxxxxxxxx/access_as_user"],
 };
+export const msalInstance = new PublicClientApplication(msalConfig);
