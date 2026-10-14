@@ -2,9 +2,9 @@ import { loginRequest } from "@/auth/authConfig";
 import { Button } from "@/components/ui/button";
 import { useIsAuthenticated, useMsal } from "@azure/msal-react";
 import GetAvatar from "./avatar/GetAvatar";
-import { GetAccessToken } from "@/api/GetAccessToken";
 const Header = () => {
   const isAuthenticated = useIsAuthenticated();
+
   const { instance } = useMsal();
   const handleLogin = () => {
     instance
@@ -13,11 +13,6 @@ const Header = () => {
         prompt: "create",
       })
       .catch((error) => console.log(error))
-      .finally(async () => {
-        console.log("Login attempt finished");
-        const token = await GetAccessToken();
-        console.log("Access Token:", token);
-      });
   };
 
   const handleLogout = () => {

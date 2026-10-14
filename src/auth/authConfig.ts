@@ -2,10 +2,11 @@ import { type Configuration, LogLevel, PublicClientApplication } from "@azure/ms
 
 export const msalConfig: Configuration = {
   auth: {
-    clientId: "xxxxxxxxxxxxxxxxxxxxxx",
-    authority:"https://login.microsoftonline.com/xxxxxxxxxxxxxxxxxxxxxxxxx",
+    clientId: "XXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    authority:"https://login.microsoftonline.com/XXXXXXXXXXXXXXXXXXXXXXXX",
     redirectUri: window.location.origin,
     postLogoutRedirectUri: window.location.origin,
+
   },
   cache: {
     cacheLocation: "localStorage",
@@ -40,6 +41,6 @@ export const loginRequest = {
 };
 
 export const apiRequest = {
-  scopes: ["api://xxxxxxxxxxxxxxxxxxxx/access_as_user"],
+  scopes: ["api://XXXXXXXXXXXXXXXXXXXXX/acces_as_user"],
 };
 export const msalInstance = new PublicClientApplication(msalConfig);
